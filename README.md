@@ -6,4 +6,4 @@ un analyseur syntaxique pour une grammaire d'un mini
 du langage C.
 
 ## Rapport:
-[Rapport Notion]https://aslantaleb.notion.site/TP1-Analyseur-Syntaxique-e3d1cfdde9644d128ae58f9f9473410f
+[Compte Rendu Notion](https://aslantaleb.notion.site/TP1-Analyseur-Syntaxique-e3d1cfdde9644d128ae58f9f9473410f)
