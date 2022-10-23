@@ -1,5 +1,5 @@
 class Pile:
-    
+
     def __init__(self):
         self.valeurs = []
 
@@ -13,7 +13,7 @@ class Pile:
     def estVide(self):
         return self.valeurs == []
 
-    def len(self):
+    def longeur(self):
         return len(self.valeurs)
 
     def printPile(self):
