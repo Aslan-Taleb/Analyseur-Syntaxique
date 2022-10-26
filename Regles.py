@@ -9,7 +9,7 @@ from Affichage import *
 def accept(entry, pile):
     if entry.longeur() == 1 and pile.longeur() == 1:
         if entry.valeurs[0] == "$" and pile.valeurs[0] == "$":
-            print("| "+str(entry) + " | "+str(pile) + " | accept | ")
+            Affichage(entry, pile , regle =bcolors.OK +"accept"+bcolors.RESET, mode =1)
             quit()
 
 # supprimer si deux elements au sommet de la pile sont egaux
@@ -18,7 +18,7 @@ def accept(entry, pile):
 def suppr(entry, pile):
     while entry.valeurs[entry.longeur()-1] == pile.valeurs[pile.longeur()-1] and entry.valeurs[entry.longeur()-1] != tabTerminaux[11]:
         if entry.valeurs[entry.longeur()-1] != tabTerminaux[11]:
-            print("| "+str(entry) + " | "+str(pile) + " | shift | ")
+            Affichage(entry, pile , regle =bcolors.RULE +"shift"+bcolors.RESET, mode =1)
             pile.depiler()
             entry.depiler()
 
@@ -124,4 +124,7 @@ def Regles(rule, pile):
         case 15:
             pile.depiler()
             pile.empiler(tabTerminaux[6])
+            return pile
+        case 16:
+            pile.depiler()
             return pile

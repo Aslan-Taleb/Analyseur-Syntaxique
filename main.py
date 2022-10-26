@@ -21,11 +21,13 @@ Error = False
 Affichage(0,0,-1,0)
 
 while Error == False:
-    
     suppr(entry, pile)
     accept(entry, pile)
     # Programme
-    if pile.valeurs[pile.longeur()-1] == tabNonTerminaux[0]:
+    if entry.valeurs[entry.longeur()-1] == tabTerminaux[11]:
+        pile = Regles(16, pile)
+        Affichage(entry, pile, 16, 1)
+    elif pile.valeurs[pile.longeur()-1] == tabNonTerminaux[0]:
         if entry.valeurs[entry.longeur()-1] == tabTerminaux[0]:
             pile = Regles(0, pile)
             Affichage(entry, pile, 0, 1)

@@ -1,31 +1,35 @@
+from tabulate import tabulate
+
 #PARTIE AFFICHAGE
 # idée : dans mode 1 mettre la ligne en fonction de len for i in range (0,longeur entry)
 # l'affichage
 
+class bcolors:
+    OK = '\033[92m' #GREEN
+    RULE = '\033[93m' #YELLOW
+    FAIL = '\033[91m' #RED
+    INTRO = '\033[44m' #RED
+    RESET = '\033[0m' #RESET COLOR
 
 def Affichage(entry = 0, pile =0, regle =0, mode =3):
     tiret = '|'
     if mode == 0:
-        for i in range(0,150):
-            tiret = tiret +'-' 
-        print(tiret +'|')
-        print("|\t\t\tEntrée\t\t\t|\t\t\tPile\t\t\t|\t\t\tAction\t\t\t   |")
-        print(tiret +'|')
+        table = [["Entrée","Pile","Action"]]
+        print(tabulate(table,tablefmt="simple"))
     elif mode == 1:
-        print("| "+str(entry) + " | "+str(pile) +
-              " | Regle -> " + str(regle)+" |")
+        table = [[str(entry),str(pile),"Regle: "+bcolors.RULE+str(regle)+bcolors.RESET]]
+        print(tabulate(table,tablefmt="simple"))
     elif mode == 2:
         print("⚠ faute de langage ⚠")
     elif mode == 3:
-        print("\n\n\t\tBienvenue au meilleur Analyseur Syntaxique(objectivement)\n")
+        table = [["Meilleur Analyseur Syntaxique(objectivement)"]]
+        print(tabulate(table,tablefmt="double_grid"))
     elif mode == 5:
-        print("⚠ Erreur de Syntaxe")
+        print(bcolors.FAIL+"⚠ Erreur de Syntaxe"+bcolors.RESET)
     elif mode == 6:
         print("⚠ Erreur La Chaine est Vide")
     elif mode == 7:
-        print("\n⚠ Aucune regle a appliquer")
-        print("| "+str(entry) + " | "+str(pile) +" |")
+        print(bcolors.FAIL+"\n⚠ Aucune regle a appliquer"+bcolors.RESET)
+        table = [[str(entry),str(pile)]]
+        print(tabulate(table,tablefmt="simple"))
         quit()
-
-    
-    
