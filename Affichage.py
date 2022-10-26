@@ -20,14 +20,14 @@ def Affichage(entry = 0, pile =0, regle =0, mode =3):
         table = [[str(entry),str(pile),"Regle: "+bcolors.RULE+str(regle)+bcolors.RESET]]
         print(tabulate(table,tablefmt="simple"))
     elif mode == 2:
-        print("⚠ faute de langage ⚠")
+        print(bcolors.FAIL+"⚠ faute de langage ⚠"+bcolors.RESET)
     elif mode == 3:
         table = [["Meilleur Analyseur Syntaxique(objectivement)"]]
         print(tabulate(table,tablefmt="double_grid"))
     elif mode == 5:
         print(bcolors.FAIL+"⚠ Erreur de Syntaxe"+bcolors.RESET)
     elif mode == 6:
-        print("⚠ Erreur La Chaine est Vide")
+        print(bcolors.FAIL+"⚠ Erreur La Chaine est Vide"+bcolors.RESET)
     elif mode == 7:
         print(bcolors.FAIL+"\n⚠ Aucune regle a appliquer"+bcolors.RESET)
         table = [[str(entry),str(pile)]]
