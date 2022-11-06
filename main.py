@@ -139,3 +139,4 @@ while Error == False:
     else:
             Error = Regles(-1, pile)
             Affichage(entry, pile, -1, 2)
+        
