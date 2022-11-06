@@ -3,9 +3,8 @@ from Grammaire import *
 from Pile import *
 from Affichage import *
 # PARTIE ENTRY
-# ca verifie que le mot donner est dans le tableau terminaux
 
-
+# Vérifie que le mot donné est dans le tableau de terminaux
 def check(monSymbole):
     for i in range(0, len(tabTerminaux)-1):
         if monSymbole == tabTerminaux[i]:
@@ -15,7 +14,7 @@ def check(monSymbole):
             return True
     return False
 
-# a partir de chaine augmente monSymbole jusqu'a trouver un mot
+# A partir de chaîne, augmente monSymbole jusqu'à trouver un mot
 
 
 def found(chaine):
@@ -31,15 +30,16 @@ def found(chaine):
         else:
             return monSymbole
     return False
-
-# trouve le mot le met dans entry (+met $ a la fin) et l'enleve de chaine puis retourne normalemnet une chaine vide
-
+"""
+trouve le mot, le met dans entry (+met $ a la fin) et 
+l'enlève de chaîne puis retourne normalemnet une chaîne vide
+"""
 
 def fillentry(chaine, entry):
     if len(chaine) != 0:
         pileTemporaire = Pile()
         resultFound = ''
-        while(chaine != '' and resultFound != False):
+        while (chaine != '' and resultFound != False):
             resultFound = found(chaine)
             if resultFound != False:
                 pileTemporaire.empiler(resultFound)

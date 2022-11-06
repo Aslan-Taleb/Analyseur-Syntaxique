@@ -3,7 +3,7 @@ from Affichage import *
 
 # PARTIE REGLES
 
-# verifier que les deux piles sont vide
+# Vérifier que les deux piles sont vides
 
 
 def accept(entry, pile):
@@ -12,8 +12,7 @@ def accept(entry, pile):
             Affichage(entry, pile , regle =bcolors.OK +"accept"+bcolors.RESET, mode =1)
             quit()
 
-# supprimer si deux elements au sommet de la pile sont egaux
-
+# Supprimer si deux éléments au sommet de la pile sont égaux
 
 def suppr(entry, pile):
     while entry.valeurs[entry.longeur()-1] == pile.valeurs[pile.longeur()-1] and entry.valeurs[entry.longeur()-1] != tabTerminaux[11]:
@@ -22,7 +21,7 @@ def suppr(entry, pile):
             pile.depiler()
             entry.depiler()
 
-# les regles a appliquer
+# les règles à appliquer
 
 
 def Regles(rule, pile):

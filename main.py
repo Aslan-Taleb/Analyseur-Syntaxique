@@ -5,28 +5,41 @@ from Regles import *
 Affichage()
 #Chaine
 chaine = input("Donner une chaine : ")
+"""
+chaine.replace supprime les espaces et les '<' '>' des non terminaux pour ne pas 
+créer de conflits avec les terminaux de même symbole.
+"""
 chaine = chaine.replace(' ' , '')
 chaine = chaine.replace('<' , '')
 chaine = chaine.replace('>' , '')
-#Pile
+#Création de l'objet Pile
 pile = Pile()
 pile.empiler("$")
 pile.empiler(tabNonTerminaux[0])
-#Entry
+#Création d'une Pile Entry pour y stocker l'entrée utilisateur
 entry = Pile()
-fillentry(chaine, entry) #mettre chaine dans pile entry
+fillentry(chaine, entry)
 
 Error = False
 #Affichage en-tête
 Affichage(0,0,-1,0)
-
+"""
+Analyse de l'entrée utilisateur à l'aide de la table d'analyse 
+et affichage de l'entrée et de la pile mises à jour après l'action effectuée,
+elle aussi affichée
+"""
 while Error == False:
     suppr(entry, pile)
     accept(entry, pile)
-    # Programme
+
+    #vide
     if entry.valeurs[entry.longeur()-1] == tabTerminaux[11]:
-        pile = Regles(16, pile)
-        Affichage(entry, pile, 16, 1)
+				#on empile la règle 16 dans la Pile "pile"
+        pile = Regles(16,pile)
+				#On affiche l'entrée, la pile et l'action
+        Affichage(entry, pile, "vide", 1)
+
+    # Programme
     elif pile.valeurs[pile.longeur()-1] == tabNonTerminaux[0]:
         if entry.valeurs[entry.longeur()-1] == tabTerminaux[0]:
             pile = Regles(0, pile)
@@ -126,4 +139,3 @@ while Error == False:
     else:
             Error = Regles(-1, pile)
             Affichage(entry, pile, -1, 2)
-        

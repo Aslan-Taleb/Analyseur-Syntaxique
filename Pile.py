@@ -26,4 +26,3 @@ class Pile:
         for x in self.valeurs:
             ch = str(x) + ch
         return ch
-
