@@ -5,7 +5,7 @@
 Un analyseur syntaxique pour une grammaire d'un mini
 du langage C.
 
-Aslan Taleb // Jules 
+Aslan Taleb // Jules Baji
 
 ## Rapport:
 [Compte Rendu Notion](https://aslantaleb.notion.site/Analyseur-Syntaxique-e3d1cfdde9644d128ae58f9f9473410f)
