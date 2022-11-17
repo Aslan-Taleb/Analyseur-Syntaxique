@@ -6,6 +6,7 @@ Un analyseur syntaxique pour une grammaire d'un mini
 du langage C.
 
 Aslan Taleb
+
 Jules Baji
 
 ## Rapport:
